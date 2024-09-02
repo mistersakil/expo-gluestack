@@ -1,17 +1,15 @@
+import "../global.css";
+
+import { Stack } from "expo-router";
 import { GluestackUIProvider } from "@/components/ui/gluestack-ui-provider";
-import { Box } from "@/components/ui/box";
+import React from "react";
 
-import { useState } from 'react';
-import { Text } from "react-native";
-
-export default function App() {
-  const [colorMode, setColorMode] = useState<"light" | "dark">("light");
-
+export default function RootLayout() {
   return (
-    <GluestackUIProvider mode={colorMode}>
-      <Box className="bg-white dark:bg-black flex-1">
-        <Text style={{ marginTop: 50, fontSize: 50 }}>test</Text>
-      </Box>
+    <GluestackUIProvider>
+      <Stack>
+        <Stack.Screen name="index" />
+      </Stack>
     </GluestackUIProvider>
-  )
+  );
 }
