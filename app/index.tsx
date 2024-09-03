@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 import {
   Button,
   ButtonText,
@@ -8,25 +8,42 @@ import {
   ButtonGroup,
 } from "@/components/ui/button";
 
-import { Appearance, useColorScheme } from "react-native";
+import * as Linking from "expo-linking";
+import * as WebBrowser from "expo-web-browser";
 
 export default function HomePage() {
-  let colorScheme = useColorScheme();
-  let theme = "";
-  if (colorScheme === "dark") {
-    theme = "dark";
-  } else {
-    theme = "light";
+  const url = Linking.useURL();
+
+  if (url) {
+    const { hostname, path, queryParams } = Linking.parse(url);
+
+    console.warn(
+      `host: ${hostname}, path: ${path} data: ${JSON.stringify(queryParams)}`
+    );
   }
 
   return (
     <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      {/* <Image source="thumbnail-1" /> */}
-      <Text>hello glue--</Text>
       <Button size="sm" variant="solid" action="positive">
-        <ButtonText>somossa ki?</ButtonText>
+        <ButtonText>tailwind btn</ButtonText>
       </Button>
-      <Text>{theme}</Text>
+      <Button
+        size="sm"
+        variant="solid"
+        action="primary"
+        onPress={() => WebBrowser.openBrowserAsync("https://google.com")}
+      >
+        <ButtonText>visit google?</ButtonText>
+      </Button>
+
+      <Button
+        size="sm"
+        variant="solid"
+        action="negative"
+        onPress={() => Linking.openURL("https://facebook.com")}
+      >
+        <ButtonText>visit facebook?</ButtonText>
+      </Button>
     </View>
   );
 }
