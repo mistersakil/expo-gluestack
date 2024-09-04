@@ -8,7 +8,9 @@ export default function RootLayout() {
   return (
     <GluestackUIProvider>
       <Stack>
-        <Stack.Screen name="index" />
+        <Stack.Screen name="(blog)" />
+        {/* <Stack.Screen name="pages" /> */}
+        {/* <Stack.Screen name="index" /> */}
       </Stack>
     </GluestackUIProvider>
   );
