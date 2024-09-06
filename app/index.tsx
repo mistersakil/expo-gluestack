@@ -1,14 +1,24 @@
+import { Link } from "expo-router";
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { Button, StyleSheet, Text, View } from "react-native";
 
 const HomePage = () => {
   return (
-    <View>
+    <View style={styles.container}>
       <Text>Home page</Text>
+      <Link href="/register" asChild>
+        <Button title="Register" />
+      </Link>
     </View>
   );
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+});
 
 export default HomePage;
