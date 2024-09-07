@@ -1,14 +1,14 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 
-const Index = () => {
+const Settings = () => {
   return (
     <View>
-      <Text>Register page</Text>
+      <Text>Home</Text>
     </View>
   );
 };
 
 const styles = StyleSheet.create({});
 
-export default Index;
+export default Settings;

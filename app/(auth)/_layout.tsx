@@ -1,7 +1,8 @@
+import { Link, Stack } from "expo-router";
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
-import { Link, Stack } from "expo-router";
-const MasterLayout = () => {
+
+const AuthLayout = () => {
   return (
     <>
       <Stack
@@ -16,17 +17,24 @@ const MasterLayout = () => {
         }}
       >
         <Stack.Screen
-          name="index"
+          name="login"
           options={{
-            title: "Home",
+            title: "Login",
             headerRight: (props) => (
-              <Link href="/login" asChild>
-                <Text>Login</Text>
+              <Link href="/register" asChild>
+                <Text>Register</Text>
               </Link>
             ),
           }}
         />
-        <Stack.Screen name="(auth)" options={{ headerShown: false }} />
+
+        <Stack.Screen
+          name="register"
+          options={{
+            title: "Register",
+            presentation: "modal",
+          }}
+        />
       </Stack>
     </>
   );
@@ -34,4 +42,4 @@ const MasterLayout = () => {
 
 const styles = StyleSheet.create({});
 
-export default MasterLayout;
+export default AuthLayout;
