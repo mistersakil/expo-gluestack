@@ -1,14 +1,14 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 
-const Home = () => {
+const LoginPage = () => {
   return (
     <View>
-      <Text>Home</Text>
+      <Text>Login page on tab content</Text>
     </View>
   );
 };
 
 const styles = StyleSheet.create({});
 
-export default Home;
+export default LoginPage;

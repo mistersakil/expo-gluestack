@@ -6,6 +6,9 @@ const HomePage = () => {
     <>
       <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
         <Text style={{ fontSize: 30 }}>Home Page</Text>
+        <Link href="/login-page">
+          <Text>Login tab page</Text>
+        </Link>
       </View>
     </>
   );

@@ -2,14 +2,33 @@ import { Tabs } from "expo-router";
 import React from "react";
 import { StyleSheet, View } from "react-native";
 
-const Layout = () => {
+const TabsLayout = () => {
   return (
-    <View>
-      <Tabs initialRouteName="home"></Tabs>
-    </View>
+    <Tabs
+      screenOptions={{
+        headerStyle: {
+          backgroundColor: "#f4511e",
+        },
+        headerTintColor: "#fff",
+        headerTitleStyle: {
+          fontWeight: "bold",
+        },
+      }}
+    >
+      <Tabs.Screen name="login-page" options={{ title: "Login Tab Page" }} />
+
+      <Tabs.Screen
+        name="register-page"
+        options={{ title: "Register Tab Page" }}
+      />
+      <Tabs.Screen
+        name="profile-page"
+        options={{ title: "Profile Tab Page" }}
+      />
+    </Tabs>
   );
 };
 
 const styles = StyleSheet.create({});
 
-export default Layout;
+export default TabsLayout;
