@@ -1,6 +1,7 @@
 import { Tabs } from "expo-router";
 import React from "react";
 import { StyleSheet, View } from "react-native";
+import AntDesign from "@expo/vector-icons/AntDesign";
 
 const TabsLayout = () => {
   return (
@@ -15,15 +16,27 @@ const TabsLayout = () => {
         },
       }}
     >
-      <Tabs.Screen name="login-page" options={{ title: "Login Tab Page" }} />
+      <Tabs.Screen
+        name="login-page"
+        options={{
+          title: "Login Tab Page",
+          tabBarIcon: () => <AntDesign name="login" size={24} color="black" />,
+        }}
+      />
 
       <Tabs.Screen
         name="register-page"
-        options={{ title: "Register Tab Page" }}
+        options={{
+          headerTitle: "Register Tab Page",
+          tabBarIcon: () => <AntDesign name="user" size={24} color="black" />,
+        }}
       />
       <Tabs.Screen
         name="profile-page"
-        options={{ title: "Profile Tab Page", href: null }}
+        options={{
+          title: "Profile Tab Page",
+          tabBarIcon: () => <AntDesign name="user" size={24} color="black" />,
+        }}
       />
     </Tabs>
   );
