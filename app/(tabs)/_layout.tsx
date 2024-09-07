@@ -2,6 +2,7 @@ import { Tabs } from "expo-router";
 import React from "react";
 import { StyleSheet, View } from "react-native";
 import AntDesign from "@expo/vector-icons/AntDesign";
+import FontAwesome from "@expo/vector-icons/FontAwesome";
 
 const TabsLayout = () => {
   return (
@@ -30,12 +31,15 @@ const TabsLayout = () => {
         options={{
           headerTitle: "Create new user",
           title: "Register",
-          tabBarIcon: () => <AntDesign name="user" size={24} color="black" />,
+          tabBarIcon: () => (
+            <FontAwesome name="sign-in" size={24} color="black" />
+          ),
         }}
       />
       <Tabs.Screen
-        name="profile-page"
+        name="users"
         options={{
+          headerShown: false,
           title: "Users",
           headerTitle: "List of users",
           tabBarIcon: () => <AntDesign name="user" size={24} color="black" />,
