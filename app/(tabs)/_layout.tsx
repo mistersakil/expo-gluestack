@@ -19,7 +19,8 @@ const TabsLayout = () => {
       <Tabs.Screen
         name="login-page"
         options={{
-          title: "Login Tab Page",
+          title: "Login",
+          headerTitle: "Login please",
           tabBarIcon: () => <AntDesign name="login" size={24} color="black" />,
         }}
       />
@@ -27,14 +28,16 @@ const TabsLayout = () => {
       <Tabs.Screen
         name="register-page"
         options={{
-          headerTitle: "Register Tab Page",
+          headerTitle: "Create new user",
+          title: "Register",
           tabBarIcon: () => <AntDesign name="user" size={24} color="black" />,
         }}
       />
       <Tabs.Screen
         name="profile-page"
         options={{
-          title: "Profile Tab Page",
+          title: "Users",
+          headerTitle: "List of users",
           tabBarIcon: () => <AntDesign name="user" size={24} color="black" />,
         }}
       />
