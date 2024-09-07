@@ -23,7 +23,7 @@ const TabsLayout = () => {
       />
       <Tabs.Screen
         name="profile-page"
-        options={{ title: "Profile Tab Page" }}
+        options={{ title: "Profile Tab Page", href: null }}
       />
     </Tabs>
   );
