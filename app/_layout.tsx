@@ -13,6 +13,14 @@ const RootLayout = () => {
             title: "Home",
           }}
         />
+
+        <Drawer.Screen
+          name="about"
+          options={{
+            drawerLabel: "About",
+            title: "About",
+          }}
+        />
       </Drawer>
     </GestureHandlerRootView>
   );
