@@ -21,6 +21,31 @@ const RootLayout = () => {
             title: "About",
           }}
         />
+
+        <Drawer.Screen
+          name="login"
+          options={{
+            drawerLabel: "Login",
+            title: "Login",
+          }}
+        />
+
+        <Drawer.Screen
+          name="register"
+          options={{
+            drawerLabel: "Register",
+            title: "Register",
+          }}
+        />
+
+        <Drawer.Screen
+          name="profile"
+          options={{
+            drawerLabel: "Profile",
+            title: "Dashboard",
+            headerShown: false,
+          }}
+        />
       </Drawer>
     </GestureHandlerRootView>
   );
