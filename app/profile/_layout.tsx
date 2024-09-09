@@ -1,17 +1,34 @@
 import { Tabs } from "expo-router";
 import React from "react";
 import { StyleSheet, View } from "react-native";
-import AntDesign from "@expo/vector-icons/AntDesign";
+import MaterialIcons from "@expo/vector-icons/MaterialIcons";
+import Feather from "@expo/vector-icons/Feather";
 const ProfileLayout = () => {
   return (
-    <Tabs>
+    <Tabs
+      screenOptions={({ route }) => ({
+        tabBarIcon: ({ focused, color, size }) => {
+          let iconName;
+
+          if (route.name === "index") {
+            iconName = focused ? "dashboard" : "space-dashboard";
+            return <MaterialIcons name={iconName} size={size} color={color} />;
+          } else if (route.name === "details") {
+            iconName = focused ? "user-check" : "user";
+            return <Feather name={iconName} size={size} color={color} />;
+          } else if (route.name === "notifications") {
+            iconName = focused ? "notifications-active" : "notifications";
+            return <MaterialIcons name={iconName} size={size} color={color} />;
+          }
+        },
+        tabBarActiveTintColor: "cyan",
+        tabBarInactiveTintColor: "gray",
+      })}
+    >
       <Tabs.Screen
         name="index"
         options={{
           title: "Dashboard",
-          tabBarIcon: ({ size, color }) => (
-            <AntDesign name="dashboard" size={size} color={color} />
-          ),
         }}
       />
 
@@ -19,9 +36,6 @@ const ProfileLayout = () => {
         name="details"
         options={{
           title: "Details",
-          tabBarIcon: ({ size, color }) => (
-            <AntDesign name="user" size={size} color={color} />
-          ),
         }}
       />
 
@@ -29,9 +43,6 @@ const ProfileLayout = () => {
         name="notifications"
         options={{
           title: "Notifications",
-          tabBarIcon: ({ size, color }) => (
-            <AntDesign name="notification" size={size} color={color} />
-          ),
         }}
       />
     </Tabs>
