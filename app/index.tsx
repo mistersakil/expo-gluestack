@@ -3,8 +3,8 @@ import { StyleSheet, Text, View } from "react-native";
 
 const Index = () => {
   return (
-    <View>
-      <Text>Home page</Text>
+    <View style={{ flex:1, justifyContent: "center", alignItems:'center' }}>
+      <Text style={{ fontSize:30 }}>Home page</Text>
     </View>
   );
 };
