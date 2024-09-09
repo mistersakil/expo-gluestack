@@ -43,6 +43,7 @@ const ProfileLayout = () => {
         name="notifications"
         options={{
           title: "Notifications",
+          tabBarBadge: 3,
         }}
       />
     </Tabs>

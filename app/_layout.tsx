@@ -2,10 +2,11 @@ import React from "react";
 import { StyleSheet, View } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { Drawer } from "expo-router/drawer";
+import MainDrawerComponent from "../components/MainDrawerComponent";
 const RootLayout = () => {
   return (
     <GestureHandlerRootView>
-      <Drawer>
+      <Drawer drawerContent={MainDrawerComponent}>
         <Drawer.Screen
           name="index"
           options={{
